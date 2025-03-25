@@ -1,0 +1,40 @@
+{
+  "name": "nrcerne-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.17.2",
+    "@mantine/hooks": "^7.17.2",
+    "@tabler/icons-react": "^3.29.0",
+    "gray-matter": "^4.0.3",
+    "next": "15.2.3",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-github-calendar": "^4.5.6"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20.17.27",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19",
+    "@vitest/browser": "^3.0.9",
+    "@vitest/coverage-v8": "^3.0.9",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.3",
+    "eslint-plugin-storybook": "^0.11.6",
+    "playwright": "^1.51.1",
+    "postcss": "^8.5.3",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "storybook": "^8.6.8",
+    "typescript": "^5",
+    "vitest": "^3.0.9"
+  }
+}
