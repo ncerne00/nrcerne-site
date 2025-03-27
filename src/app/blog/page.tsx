@@ -1,6 +1,8 @@
 import { Title, Grid, GridCol, Stack, Flex } from '@mantine/core';
+
 import { getAllPosts } from '@/lib/mdx';
 import BlogCard from '@/components/content/BlogCard';
+import { EmailSubscriptionCard } from '@/components/email/EmailSubscriptionCard';
 export default async function BlogPage() {
   const allPosts = await getAllPosts();
   
@@ -8,9 +10,9 @@ export default async function BlogPage() {
     <Flex direction="column" m="xl">
       <Title order={1} mb="xl">Blog</Title>
       
-      <Grid gutter="xl">
+      <Grid gutter="xl" justify="center">
         {/* Main content - All posts */}
-        <GridCol span={{ base: 12, md: 8 }}>
+        <GridCol span={10}>
           <Stack spacing="lg">
             {allPosts.map((post) => (
               <BlogCard key={post.slug} post={post} />
@@ -18,6 +20,9 @@ export default async function BlogPage() {
           </Stack>
         </GridCol>
       </Grid>
+      <Flex justify="center" m="lg">
+        <EmailSubscriptionCard />
+      </Flex>
     </Flex>
   );
 }

@@ -9,8 +9,7 @@ A modern, performant personal blog website built with Next.js, React, and TypeSc
 
 ## 🚀 Upcoming Features
 
-- **Blog Analytics** - Track post popularity using Supabase
-- **Email Newsletter** - Maintain a subscriber mailing list
+- **Blog Analytics** - Track post popularity with Cloudflare analytics
 
 ## 📦 Tech Stack
 
@@ -31,7 +30,7 @@ A modern, performant personal blog website built with Next.js, React, and TypeSc
 
 ```bash
 # Clone the repository
-git clone https://github.com/ncerne00/nrcerne-site-frontend
+git clone https://github.com/ncerne00/nrcerne-site
 cd personal-blog
 
 # Install dependencies
