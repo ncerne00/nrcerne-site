@@ -4,6 +4,7 @@ import Terminal from "@/components/content/Terminal";
 import GitHubCalendar from 'react-github-calendar';
 
 import Badges from "@/components/content/Badges";
+
   const certificationBadges = [
     {
       id: "oscp",
@@ -61,10 +62,11 @@ export default function Whoami() {
         <Box w={{ base: "100%", md: "30%" }} ta={{ base: "center", md: "center" }}>
           <Paper shadow="md" radius="lg" p="md" withBorder>
             <Image
-              src="/images/dog.jpg"
+              src="/images/headshot.png"
               alt="Whoami"
               radius="50%"
-              maw={220}
+              w={250}
+              h={250}
               mx="auto"
               mb="md"
             />

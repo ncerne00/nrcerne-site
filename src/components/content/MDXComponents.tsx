@@ -16,9 +16,8 @@ const MDXComponents = {
         const language = props.className.replace('language-', '');
         return (
           <Box 
-            my="md" 
+            my="md"
             style={{
-              backgroundColor: 'var(--mantine-color-gray-1)',
               borderRadius: 'var(--mantine-radius-md)',
               padding: 'var(--mantine-spacing-md)',
               overflow: 'auto',

@@ -1,6 +1,6 @@
 // src/components/content/BlogCard.tsx
 import React from 'react';
-import { Card, Image, Text, Group, Badge, Title, Box, Flex } from '@mantine/core';
+import { Paper, Image, Text, Group, Badge, Title, Box, Flex } from '@mantine/core';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { PostMeta } from '@/lib/mdx';
@@ -13,7 +13,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   const thumbnailPath = post.thumbnail;
 
   return (
-    <Card shadow="sm" p="lg" radius="md" withBorder>
+    <Paper shadow="sm" p="lg" radius="md" withBorder>
       <Flex gap="md" align="flex-start">
         {/* Thumbnail on the left */}
         <Link href={`/blog/${post.slug}`}>
@@ -51,6 +51,6 @@ export default function BlogCard({ post }: BlogCardProps) {
           )}
         </Box>
       </Flex>
-    </Card>
+    </Paper>
   );
 }
