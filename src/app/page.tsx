@@ -71,7 +71,7 @@ export default function Whoami() {
               mb="md"
             />
             <Title order={4} ta="center" mb="sm">
-              Nick &quot;nix&quot; Cerne
+              Nick Cerne
             </Title>
           </Paper>
         </Box>
