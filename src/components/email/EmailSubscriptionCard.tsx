@@ -13,19 +13,29 @@ import {
 } from '@mantine/core';
 import { IconMail, IconCheck } from '@tabler/icons-react';
 
+const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT 
+  ? process.env.NEXT_PUBLIC_API_ENDPOINT.toString() 
+  : undefined;
+
+/* Ensure API endpoint is available */
+if (!API_ENDPOINT) {
+  console.warn('NEXT_PUBLIC_API_ENDPOINT environment variable is not set. The subscription form will not work correctly.')
+}
+
 interface SubscriptionCardProps {
   title?: string;
   description?: string;
   buttonText?: string;
   onSubmit?: (email: string) => Promise<boolean>;
   className?: string;
+  apiEndpoint?: string;
 }
 
 export function EmailSubscriptionCard({
   title = 'Join My Newsletter',
   description = 'Subscribe to get notified when I publish new blog posts.',
   buttonText = 'Subscribe',
-  onSubmit,
+  apiEndpoint = API_ENDPOINT,
   className,
 }: SubscriptionCardProps) {
   const [email, setEmail] = useState('');
@@ -47,14 +57,23 @@ export function EmailSubscriptionCard({
     setError(null);
     
     try {
-      /* If no onSubmit handler is provided, simulate a successful submission */
-      const result = onSubmit ? await onSubmit(email) : true;
+      /* Send POST request to the API Gateway */
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email.trim() })
+      });
       
-      if (result) {
+      const data = await response.json();
+      
+      if (response.ok) {
         setSuccess(true);
         setEmail('');
       } else {
-        setError('Something went wrong. Please try again.');
+        console.log("piss")
+        setError(data.error || 'Something went wrong. Please try again.');
       }
     } catch (err) {
       setError('Failed to subscribe. Please try again later.');

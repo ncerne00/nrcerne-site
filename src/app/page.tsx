@@ -4,8 +4,6 @@ import Terminal from "@/components/content/Terminal";
 import GitHubCalendar from 'react-github-calendar';
 
 import Badges from "@/components/content/Badges";
-
-  // Define certification badges
   const certificationBadges = [
     {
       id: "oscp",
@@ -34,7 +32,6 @@ export default function Whoami() {
  ➜ ls past_projects
  - Project 1: Reverse Engineering and hacking a Smart Grill
  - Project 2: RustyMalware - A malware development library in Rust
- - Project 3: Reverse Engineering an HP 3830 Printer 🖨️
  ➜ cat learn_more.txt
  If you'd like to read more on my current projects, visit my GitHub (linked above) or read my blog!`;
 
