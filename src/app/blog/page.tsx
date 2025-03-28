@@ -13,7 +13,7 @@ export default async function BlogPage() {
       <Grid gutter="xl" justify="center">
         {/* Main content - All posts */}
         <GridCol span={10}>
-          <Stack spacing="lg">
+          <Stack gap="xl">
             {allPosts.map((post) => (
               <BlogCard key={post.slug} post={post} />
             ))}

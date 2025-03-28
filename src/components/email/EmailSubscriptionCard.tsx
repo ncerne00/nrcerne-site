@@ -8,8 +8,7 @@ import {
   Group, 
   Stack,
   Title,
-  Notification,
-  useMantineTheme
+  Notification
 } from '@mantine/core';
 import { IconMail, IconCheck } from '@tabler/icons-react';
 
@@ -42,7 +41,6 @@ export function EmailSubscriptionCard({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  const theme = useMantineTheme();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,6 +55,12 @@ export function EmailSubscriptionCard({
     setError(null);
     
     try {
+      if (!apiEndpoint) {
+        console.error('API endpoint is not defined.');
+        setError('API endpoint is not defined.');
+        return;
+      }
+
       /* Send POST request to the API Gateway */
       const response = await fetch(apiEndpoint, {
         method: 'POST',
@@ -72,7 +76,6 @@ export function EmailSubscriptionCard({
         setSuccess(true);
         setEmail('');
       } else {
-        console.log("piss")
         setError(data.error || 'Something went wrong. Please try again.');
       }
     } catch (err) {
@@ -90,12 +93,9 @@ export function EmailSubscriptionCard({
       p="xl"
       withBorder
       className={className}
-      sx={{
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
-      }}
     >
       <form onSubmit={handleSubmit}>
-        <Stack spacing="md">
+        <Stack>
           <Title order={3} size="h3">
             {title}
           </Title>
@@ -118,7 +118,7 @@ export function EmailSubscriptionCard({
               <TextInput
                 required
                 placeholder="your@email.com"
-                icon={<IconMail size="1rem" />}
+                leftSection={<IconMail size="1rem" />}
                 value={email}
                 onChange={(e) => setEmail(e.currentTarget.value)}
                 error={error}
@@ -132,7 +132,7 @@ export function EmailSubscriptionCard({
                 </Text>
               )}
               
-              <Group position="right" mt="md" justify="center">
+              <Group mt="md" justify="center">
                 <Button
                   type="submit"
                   loading={loading}

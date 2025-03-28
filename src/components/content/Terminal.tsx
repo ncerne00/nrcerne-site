@@ -197,9 +197,9 @@ export default function Terminal({
         
         {/* Terminal title */}
         <Text
-          align="center"
+          ta="center"
           size="xs"
-          weight={500}
+          fw={500}
           style={{
             flex: 1, 
             color: 'rgba(255, 255, 255, 0.7)',

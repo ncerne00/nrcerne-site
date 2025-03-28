@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Title, Text, Group, Badge, Flex, Paper } from '@mantine/core';
 import { format } from 'date-fns';
+
 import { getPostBySlug, serializeMDX, getAllPosts } from '@/lib/mdx';
 import MDXContent from '@/components/content/MDXContent';
 
@@ -25,7 +26,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <Paper shadow="lg" w="60%" p="lg">
         <Flex direction="column" align="center">
           <Title>{post.meta.title}</Title>
-          <Text size="sm" color="dimmed" my="md">
+          <Text size="sm" c="dimmed" my="md">
             {format(new Date(post.meta.date), 'MMMM dd, yyyy')}
           </Text>
           

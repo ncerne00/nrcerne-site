@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { Title, Text, Code, List, Anchor, Image, Box } from '@mantine/core';
 
-/* This needs work */
 const MDXComponents = {
   h1: (props: any) => <Title order={1} my="lg" {...props} />,
   h2: (props: any) => <Title order={2} my="md" {...props} />,

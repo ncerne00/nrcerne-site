@@ -38,7 +38,6 @@ export default function Badges({ badges }: BadgesProps) {
             position="top"
             withArrow
             multiline
-            width={220}
           >
             <UnstyledButton
               component={badge.url ? "a" : "div"}
