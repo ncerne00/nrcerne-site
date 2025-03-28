@@ -17,13 +17,13 @@ export default function BlogCard({ post }: BlogCardProps) {
       <Flex gap="md" align="flex-start">
         {/* Thumbnail on the left */}
         <Link href={`/blog/${post.slug}`}>
-          <Image
-            src={thumbnailPath}
-            width={100}
-            height={100}
-            radius="md"
-            alt={post.title}
-          />
+          <Box w="100px" h="100px">
+            <Image
+              src={thumbnailPath}
+              radius="md"
+              alt={post.title}
+            />
+          </Box>
         </Link>
 
         {/* Content on the right */}
@@ -32,7 +32,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             <Title order={3} mb="xs">{post.title}</Title>
           </Link>
           
-          <Text size="sm" color="dimmed" mb="xs">
+          <Text size="sm" c="dimmed" mb="xs">
             {format(new Date(post.date), 'MMMM dd, yyyy')}
           </Text>
           
