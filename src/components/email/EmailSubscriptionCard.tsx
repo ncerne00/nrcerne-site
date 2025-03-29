@@ -126,12 +126,6 @@ export function EmailSubscriptionCard({
                 aria-label="Email address"
               />
               
-              {error && (
-                <Text size="xs" color="red">
-                  {error}
-                </Text>
-              )}
-              
               <Group mt="md" justify="center">
                 <Button
                   type="submit"
