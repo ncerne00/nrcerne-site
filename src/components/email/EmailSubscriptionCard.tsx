@@ -46,7 +46,8 @@ export function EmailSubscriptionCard({
     e.preventDefault();
     
     /* Basic Email Validation */
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+    const emailRegex = /^[a-zA-Z0-9](?:[a-zA-Z0-9._-]*[a-zA-Z0-9])?@[a-zA-Z0-9](?:[a-zA-Z0-9.-]*[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,})+$/;
+    if (!email || !emailRegex.test(email)) {
       setError('Please enter a valid email address');
       return;
     }
