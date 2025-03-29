@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Title, Text, Code, List, Anchor, Image, Box } from '@mantine/core';
+import { Title, Text, Code, List, Anchor, Image, Box, Flex } from '@mantine/core';
 
 const MDXComponents = {
-  h1: (props: any) => <Title order={1} my="lg" {...props} />,
-  h2: (props: any) => <Title order={2} my="md" {...props} />,
-  h3: (props: any) => <Title order={3} my="sm" {...props} />,
-  h4: (props: any) => <Title order={4} my="xs" {...props} />,
-  p: (props: any) => <Text my="md" {...props} />,
+  h1: (props: any) => <Title order={1} ta="center" my="lg" {...props} />,
+  h2: (props: any) => <Title order={2} ta="center" my="md" {...props} />,
+  h3: (props: any) => <Title order={3} ta="center" my="sm" {...props} />,
+  h4: (props: any) => <Title order={4} ta="center" my="xs" {...props} />,
+  p: (props: any) => <Flex w="100%"><Text my="md" ta="left" {...props} /></Flex>,
   /* Checks if the code block is a block or inline code */
   code: (props: any) => {
       /* Check if this is a code block (has className with language) or inline code */

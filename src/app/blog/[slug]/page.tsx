@@ -24,9 +24,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   
   return (
     <Flex w="100%" justify="center">
-      <Paper shadow="lg" w="60%" p="lg">
+      <Paper 
+        shadow="lg" 
+        w={{ base: "95%", sm: "90%", md: "80%", lg: "60%" }}
+        p="lg"
+      >
         <Flex direction="column" align="center">
-          <Title>{post.meta.title}</Title>
+          <Title ta="center">{post.meta.title}</Title>
           <Text size="sm" c="dimmed" my="md">
             {format(new Date(post.meta.date), 'MMMM dd, yyyy')}
           </Text>
@@ -40,8 +44,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               ))}
             </Group>
           )}
-          
-          <MDXContent source={mdxSource} />
+            <MDXContent source={mdxSource} />
         </Flex>
       </Paper>
     </Flex>
